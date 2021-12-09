@@ -1,0 +1,20 @@
+<div class="celect-main">
+  <h2 class="celect-title">
+  <% if user_signed_in? %>
+   <%= link_to "#{current_user.nickname}", user_path(current_user), class: :greeting__link%>
+  <% end %>
+  今日もおつかれさま！</h2>
+  <%= form_with model: @home, url: homes_result_path, local: true do |f|%>
+    <div class="new-celect">
+      <div class="category-select">
+        <p>今日頑張ったことを教えて！</p>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"home-category"}) %>
+      </div>
+      <div class="feel-select">
+        <p>今の気分は？</p>
+        <%= f.collection_select(:feel_id, Feel.all, :id, :name, {}, {class:"select-box", id:"home-feel"}) %>
+      </div>
+      <%= f.submit "OK", class:"submit-btn" %>
+    </div>
+  <% end %>
+</div>

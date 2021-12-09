@@ -1,0 +1,13 @@
+<h2><%= @home.category.name %>、お疲れ様！！</h2>
+
+
+  <% if @home.feel_id == 2 %>
+  <% @words.each do |word| %>
+    <%= word.name %>
+  <% end %>
+<% else %>
+<% @words.each do |word| %>
+    <%= word.name %>
+  <% end %>
+<% end %> 
+
