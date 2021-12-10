@@ -1,4 +1,4 @@
-/* リセットCSS 
+/* リセットCSS */
 * {
   box-sizing: border-box;
 }
@@ -38,13 +38,13 @@ a {
 .text-center {
   text-align: center!important;
 }
-body {
+/*body {
   display: flex;
   color: #fff;
   text-shadow: 0 0.05rem 0.1rem rgb(0 0 0 / 50%);
   box-shadow: inset 0 0 5rem rgb(0 0 0 / 50%);
   background-color: #212529;
-}
+}*/
 
 :root {
   --blue: #007bff;
@@ -115,4 +115,4 @@ body {
 .d-flex {
   display: -ms-flexbox!important;
   display: flex!important;
-}*/
+}
