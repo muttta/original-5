@@ -1,13 +1,15 @@
-<h2><%= @home.category.name %>、お疲れ様！！</h2>
+<div class="messages">
+<h2 class="top-message text-center "><%= @home.category.name %>、お疲れ様です</h2>
 
-
+<div class="message-left col-xs-6">
   <% if @home.feel_id == 2 %>
   <% @words.each do |word| %>
-    <%= word.name %>
+    <p><%= word.name %></p>
   <% end %>
 <% else %>
 <% @words.each do |word| %>
-    <%= word.name %>
+    <p><%= word.name %></p>
   <% end %>
 <% end %> 
+</div>
 
