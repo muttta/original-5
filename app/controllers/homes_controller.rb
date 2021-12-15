@@ -6,9 +6,9 @@ class HomesController < ApplicationController
 
   def result 
     @home = Home.new(home_params)
-      rand_num = rand(4)+1
-      @words = Word.find([rand_num])
-      
+    rand_num = rand(4)+1
+    @words = Word.find([rand_num])
+    @words2 = Word2.find([rand_num])
   end
 
   private
