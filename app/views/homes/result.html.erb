@@ -1,37 +1,44 @@
-<div class="messages">
-<h2 class="top-message text-center "><%= @home.category.name %>、お疲れ様です</h2>
+<div class="messages text-center">
+<h2 class="top-message"><%= @home.category.name %>、お疲れ様です</h2>
 
-<div class="message-left col-xs-6">
+<div class="messages">
   <% if @home.feel_id == 2 %>
 
+    <div class="message left ">
     <% @message1_a.each do |message| %>
       <%= message.name %>
     <% end %>
-  <% else %>
-    <% @message1_b.each do |message| %>
-      <%= message.name %>
-    <% end %>
-  <% end %> 
-
-  <% if @home.feel_id == 2 %>
+    </div>
+    <div class="message right ">
     <% @message2_a.each do |message| %>
       <%= message.name %>
     <% end %>
-  <% else %>
-    <% @message2_b.each do |message| %>
-      <%= message.name %>
-    <% end %>
-  <% end %> 
-
-  <% if @home.feel_id == 2 %>
+    </div>
+    <div class="message left ">
     <% @message3_a.each do |message| %>
       <%= message.name %>
     <% end %>
+    </div>
+
   <% else %>
+  <div class="message left ">
+    <% @message1_b.each do |message| %>
+      <%= message.name %>
+    <% end %>
+    </div>
+    <div class="message right ">
+    <% @message2_b.each do |message| %>
+      <%= message.name %>
+    <% end %>
+    </div>
+    <div class="message left ">
     <% @message3_b.each do |message| %>
       <%= message.name %>
     <% end %>
+    </div>
+
   <% end %>   
 </div>
-
+<%= image_tag "black-and-white-g97fbd52a7_640.jpg", class:"list-pict" %>
+</div>
 
