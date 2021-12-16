@@ -1,20 +1,25 @@
-<div class="celect-main">
-  <h2 class="celect-title">
-  <% if user_signed_in? %>
-   <%= link_to "#{current_user.nickname}", user_path(current_user), class: :greeting__link%>
-  <% end %>
-  今日もおつかれさま！</h2>
-  <%= form_with model: @home, url: homes_result_path, local: true do |f|%>
-    <div class="new-celect">
+<div role="main" class="inner_cover text-center">
+  <div class="title" >HOME・TAI</div>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <h2 class="lead pt-3 py-1">
+    今日も一日お疲れ様でした。<br>
+  </h2>
+  <h3 class="lead pt-3 py-4">
+    今日はどんな１日でしたか？<br>
+    あなたの頑張りをきかせてください。
+  </h3>
+
+      <%= form_with model: @home, url: homes_result_path, local: true do |f|%>
+      <div class="new-celect mt-4">
       <div class="category-select">
-        <p>今日頑張ったことを教えて！</p>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"home-category"}) %>
+        <p class="my-3">今日一番頑張ったことを選んでください</p>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form-control form-control-lg", id:"home-category"}) %>
       </div>
       <div class="feel-select">
-        <p>今の気分は？</p>
-        <%= f.collection_select(:feel_id, Feel.all, :id, :name, {}, {class:"select-box", id:"home-feel"}) %>
+        <p class="my-3 mt-4">今の気分に近いものを選んでください</p>
+        <%= f.collection_select(:feel_id, Feel.all, :id, :name, {}, {class:"form-control form-control-lg", id:"home-feel"}) %>
       </div>
-      <%= f.submit "OK", class:"submit-btn" %>
+        <%= f.submit "OK", class:"btn btn-primary btn-lg mt-4" %>
     </div>
   <% end %>
 </div>

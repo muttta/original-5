@@ -1,7 +1,9 @@
-<h2><%= @home.category.name %>、お疲れ様！！</h2>
+<div class="messages">
+<h2 class="top-message text-center "><%= @home.category.name %>、お疲れ様です</h2>
 
-
+<div class="message-left col-xs-6">
   <% if @home.feel_id == 2 %>
+
     <% @message1_a.each do |message| %>
       <%= message.name %>
     <% end %>
@@ -29,21 +31,16 @@
     <% @message3_b.each do |message| %>
       <%= message.name %>
     <% end %>
-  <% end %> 
+  <% end %>   
 
-  <p>今の気分にぴったりな名言をプレゼントするよ<br>どんな名言がいいかな？</p>
-    <form name="select_message">
-      <select name="select-btn" id="select-btn">
-        <option value="1">おまかせ！</option>
-        <option value="2">やる気を出したい</option>
-        <option value="3">モチベーションを上げたい</option>
-        <option value="4">一歩踏み出したい！</option>
-        <option value="5">自信を持ちたい</option>
-        <option value="6">体調が気になる</option>
-        <option value="7">とにかく疲れた</option>
-      </select>
-    </form>
-    <input type="button" value="OK" onclick="clickButn1()">
+  <% @words.each do |word| %>
+    <p><%= word.name %></p>
+  <% end %>
+<% else %>
+<% @words.each do |word| %>
+    <p><%= word.name %></p>
+  <% end %>
+<% end %> 
+</div>
 
-    
 
