@@ -2,12 +2,48 @@
 
 
   <% if @home.feel_id == 2 %>
-  <% @words.each do |word| %>
-    <%= word.name %>
-  <% end %>
-<% else %>
-<% @words2.each do |word| %>
-    <%= word.name %>
-  <% end %>
-<% end %> 
+    <% @message1_a.each do |message| %>
+      <%= message.name %>
+    <% end %>
+  <% else %>
+    <% @message1_b.each do |message| %>
+      <%= message.name %>
+    <% end %>
+  <% end %> 
+
+  <% if @home.feel_id == 2 %>
+    <% @message2_a.each do |message| %>
+      <%= message.name %>
+    <% end %>
+  <% else %>
+    <% @message2_b.each do |message| %>
+      <%= message.name %>
+    <% end %>
+  <% end %> 
+
+  <% if @home.feel_id == 2 %>
+    <% @message3_a.each do |message| %>
+      <%= message.name %>
+    <% end %>
+  <% else %>
+    <% @message3_b.each do |message| %>
+      <%= message.name %>
+    <% end %>
+  <% end %> 
+
+  <p>今の気分にぴったりな名言をプレゼントするよ<br>どんな名言がいいかな？</p>
+    <form name="select_message">
+      <select name="select-btn" id="select-btn">
+        <option value="1">おまかせ！</option>
+        <option value="2">やる気を出したい</option>
+        <option value="3">モチベーションを上げたい</option>
+        <option value="4">一歩踏み出したい！</option>
+        <option value="5">自信を持ちたい</option>
+        <option value="6">体調が気になる</option>
+        <option value="7">とにかく疲れた</option>
+      </select>
+    </form>
+    <input type="button" value="OK" onclick="clickButn1()">
+
+    
 
