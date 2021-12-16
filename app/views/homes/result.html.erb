@@ -3,6 +3,36 @@
 
 <div class="message-left col-xs-6">
   <% if @home.feel_id == 2 %>
+
+    <% @message1_a.each do |message| %>
+      <%= message.name %>
+    <% end %>
+  <% else %>
+    <% @message1_b.each do |message| %>
+      <%= message.name %>
+    <% end %>
+  <% end %> 
+
+  <% if @home.feel_id == 2 %>
+    <% @message2_a.each do |message| %>
+      <%= message.name %>
+    <% end %>
+  <% else %>
+    <% @message2_b.each do |message| %>
+      <%= message.name %>
+    <% end %>
+  <% end %> 
+
+  <% if @home.feel_id == 2 %>
+    <% @message3_a.each do |message| %>
+      <%= message.name %>
+    <% end %>
+  <% else %>
+    <% @message3_b.each do |message| %>
+      <%= message.name %>
+    <% end %>
+  <% end %>   
+
   <% @words.each do |word| %>
     <p><%= word.name %></p>
   <% end %>
@@ -12,4 +42,5 @@
   <% end %>
 <% end %> 
 </div>
+
 
